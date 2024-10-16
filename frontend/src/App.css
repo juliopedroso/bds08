@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

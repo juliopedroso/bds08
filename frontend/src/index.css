@@ -1,0 +1,9 @@
+:root {
+  --gray-light-color: #9eaabe;
+  --blue-color: #334ac3;
+}
+
+.base-card {
+  background: var(--primary-color);
+  border-radius: 10px;
+}

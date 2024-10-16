@@ -1,0 +1,13 @@
+.main-header-container {
+  padding-left: 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  border: 1px solid red;
+}
+
+.main-header-title {
+  color: var(--blue-color);
+  font-size: 24px;
+}
