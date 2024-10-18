@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
+  background-color: var(--primary-color);
 }
 
 h1,
@@ -10,6 +11,7 @@ h4,
 h5,
 h6 {
   margin-bottom: 0;
+  margin-top: 0;
   font-weight: 700;
 }
 
@@ -18,8 +20,16 @@ a:hover {
   text-decoration: none;
   color: unset;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
 }
