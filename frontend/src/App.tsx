@@ -4,12 +4,13 @@ import Header from './Components/Header';
 import PieChartCard from './Components/PieChartCard';
 
 function App() {
+
   return (
     <>
       <Header />
       <div className="app-container">
         <Filter />
-        <PieChartCard />
+        <PieChartCard labels={['Feminino', 'Masculino', 'Outros']} series={[20, 30, 50]} />
       </div>
     </>
   );
