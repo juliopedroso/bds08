@@ -8,25 +8,15 @@ type props = {
 };
 
 function PieChartCard({ labels = [], series = [] }: props) {
-
   return (
-    <div className="pie-chart-container base-card">
-
-      <div className="pie-chart-content-top">
-        <h4>R$ 746.484,00</h4>
-        <h6>Total de Vendas</h6>
-
-      </div>
-      <div className="pie-chart-content-bottom">
-        <ReactApexChart options={buildPieChartConfig(labels, "")}
-          type="donut"
-          width="280"
-          height="280"
-          series={series}
-        />
-      </div>
+    <div className="pie-chart-card">
+      <ReactApexChart options={buildPieChartConfig(labels, "")}
+        type="donut"
+        width="280"
+        height="280"
+        series={series}
+      />
     </div>
-
   );
 }
 

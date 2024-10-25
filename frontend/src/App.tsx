@@ -1,7 +1,8 @@
 import './App.css';
 import Filter from './Components/Filter';
 import Header from './Components/Header';
-import PieChartCard from './Components/PieChartCard';
+import SalesByGender from './Components/SalesByGender';
+
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
       <Header />
       <div className="app-container">
         <Filter />
-        <PieChartCard labels={['Feminino', 'Masculino', 'Outros']} series={[20, 30, 50]} />
+        <SalesByGender />
       </div>
     </>
   );
