@@ -15,7 +15,6 @@ function SalesByGender() {
   useEffect(() => {
     makeRequest.get('/sales/by-gender')
       .then(response => {
-        setSalesByGender(response.data);
         const newTotalSum = sumSalesByGender(response.data);
         setTotalSum(newTotalSum);
         const newSalesByGender = buildSalesByGenderChart(response.data);

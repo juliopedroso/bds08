@@ -9,3 +9,8 @@ export type PieChartConfig = {
   labels: string[];
   series: number[];
 };
+
+export type Store = {
+  id: number;
+  name: string;
+}
