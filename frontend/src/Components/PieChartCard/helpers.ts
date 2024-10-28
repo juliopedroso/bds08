@@ -67,8 +67,3 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
     }
   } as ApexOptions;
 };
-export const sumSalesByGender = (salesByGender: SalesByGender[] = []) => {
-  return salesByGender.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue.sum;
-  }, 0);
-};
