@@ -1,5 +1,7 @@
+export type Gender = 'MALE' | 'FEMALE' | 'OTHER';
+
 export type SalesByGender = {
-  gender: string;
+  gender: Gender;
   sum: number;
 }
 
