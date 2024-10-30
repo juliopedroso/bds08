@@ -39,7 +39,7 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
         donut: {
           size: '65%',
           labels: {
-            show: true,
+            show: false,
             name: {
               show: true,
               offsetY: 10,
