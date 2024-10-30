@@ -1,19 +1,23 @@
 import './styles.css';
 
-import { useEffect, useState } from 'react';
-import { makeRequest } from '../../utils/request';
+import { useEffect, useMemo, useState } from 'react';
+import { buildFilterParams, makeRequest } from '../../utils/request';
 import { formatPrice } from '../../utils/formatters';
 import PieChartCard from '../PieChartCard';
 import { buildSalesByGenderChart, sumSalesByGender } from './helper';
-import { PieChartConfig } from '../../types';
+import { FilterData, PieChartConfig, SalesByGender } from '../../types';
 
-function SalesByGender() {
+type Props = {
+  filterData?: FilterData;
+}
+function SalesByGenderComponent({ filterData }: Props) {
 
   const [salesByGender, setSalesByGender] = useState<PieChartConfig>();
+  const params = useMemo(() => buildFilterParams(filterData), [filterData]);
 
   const [totalSum, setTotalSum] = useState(0);
   useEffect(() => {
-    makeRequest.get('/sales/by-gender')
+    makeRequest.get<SalesByGender[]>('/sales/by-gender', { params })
       .then(response => {
         const newTotalSum = sumSalesByGender(response.data);
         setTotalSum(newTotalSum);
@@ -23,7 +27,7 @@ function SalesByGender() {
       .catch(() => {
         console.error('Error to fetch sales by store');
       });
-  }, [])
+  }, [params])
 
   return (
     <div className="pie-chart-container base-card">
@@ -38,4 +42,4 @@ function SalesByGender() {
   );
 }
 
-export default SalesByGender;
+export default SalesByGenderComponent;

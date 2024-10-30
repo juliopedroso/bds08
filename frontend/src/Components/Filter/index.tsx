@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { makeRequest } from '../../utils/request';
 import { FilterData, Store } from '../../types';
 
-
 type Props = {
   onFilterChange: (filter: FilterData) => void;
 };
@@ -12,7 +11,7 @@ type Props = {
 function Filter({ onFilterChange }: Props) {
 
   const [selectStores, setSelectStores] = useState<Store[]>([]);
-  const [store, setStore] = useState<Store>();
+
   useEffect(() => {
     makeRequest.get('/stores')
       .then(response => {
@@ -20,12 +19,9 @@ function Filter({ onFilterChange }: Props) {
       })
   }, [])
 
-  const handleChangeStore = (value: Store) => {
-
-    setStore(value);
-    onFilterChange({ store: value });
-    console.log(value);
-  };
+  function handleChangeStore(value: Store): void {
+    onFilterChange({ store: value });    
+  }
 
   return (
     <div className="filter-container base-card">
@@ -41,5 +37,6 @@ function Filter({ onFilterChange }: Props) {
     </div>
   )
 }
+
 
 export default Filter;

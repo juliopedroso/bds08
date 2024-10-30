@@ -7,19 +7,20 @@ import { FilterData } from './types';
 
 
 function App() {
-
   const [filterData, setFilterData] = useState<FilterData>();
 
-  const onFilterChange = (filter: FilterData) => {
+
+  function onFilterChange(filter: FilterData): void {
     setFilterData(filter);
-    console.log(filterData);
-  };
+    console.log(filter);
+  }
+
   return (
     <>
       <Header />
       <div className="app-container">
         <Filter onFilterChange={onFilterChange} />
-        <SalesByGender />
+        <SalesByGender filterData={filterData} />
       </div>
     </>
   );
