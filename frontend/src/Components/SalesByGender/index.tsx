@@ -20,6 +20,9 @@ function SalesByGender() {
         const newSalesByGender = buildSalesByGenderChart(response.data);
         setSalesByGender(newSalesByGender);
       })
+      .catch(() => {
+        console.error('Error to fetch sales by store');
+      });
   }, [])
 
   return (

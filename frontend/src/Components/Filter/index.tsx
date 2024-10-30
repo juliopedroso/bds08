@@ -2,18 +2,30 @@ import Select from 'react-select';
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { makeRequest } from '../../utils/request';
-import { Store } from '../../types';
+import { FilterData, Store } from '../../types';
 
-function Filter() {
+
+type Props = {
+  onFilterChange: (filter: FilterData) => void;
+};
+
+function Filter({ onFilterChange }: Props) {
 
   const [selectStores, setSelectStores] = useState<Store[]>([]);
-
+  const [store, setStore] = useState<Store>();
   useEffect(() => {
     makeRequest.get('/stores')
       .then(response => {
         setSelectStores(response.data);
       })
   }, [])
+
+  const handleChangeStore = (value: Store) => {
+
+    setStore(value);
+    onFilterChange({ store: value });
+    console.log(value);
+  };
 
   return (
     <div className="filter-container base-card">
@@ -22,13 +34,12 @@ function Filter() {
         classNamePrefix="filter-select"
         isClearable
         placeholder="Cidade"
-        onChange={value => console.log(value)/*handleChangeCategory(value as Store)*/}
+        onChange={value => handleChangeStore(value as Store)}
         getOptionLabel={(store: Store) => store.name}
         getOptionValue={(store: Store) => String(store.id)}
       />
     </div>
   )
 }
-
 
 export default Filter;
