@@ -30,12 +30,12 @@ function SalesByGenderComponent({ filterData }: Props) {
   }, [params])
 
   return (
-    <div className="pie-chart-container base-card">
-      <div className="pie-chart-content-top">
+    <div className="sales-by-gender-container base-card">
+      <div className="sales-by-gender-content-top">
         <h4>{formatPrice(totalSum)}</h4>
-        <h6>Total de Vendas</h6>
+        <h6>Total de vendas</h6>
       </div>
-      <div className="pie-chart-content-bottom">
+      <div className="sales-by-gender-content-bottom">
         <PieChartCard labels={salesByGender?.labels} series={salesByGender?.series} />
       </div>
     </div>

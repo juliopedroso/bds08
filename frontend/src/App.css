@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
@@ -30,6 +32,25 @@ ul {
 .app-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 10px;
+}
+
+@media (min-width: 576px) {
+  .app-container {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .app-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: center;
+  }
+  .sales-by-gender-content-top {
+    width: 100%;
+  }
+  .sales-by-gender-content-bottom {
+    width: 100%;
+  }
 }
